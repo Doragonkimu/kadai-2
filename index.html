@@ -1,4 +1,4 @@
-<!doctype html>
+<!-- <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,4 +10,64 @@
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>単語帳アプリ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 新規登録フォーム -->
+    <div class="auth-form" id="authForm">
+        <h2>新規登録</h2>
+        <form id="registerForm">
+            <input type="text" id="username" placeholder="ユーザー名" required>
+            <input type="password" id="password" placeholder="パスワード" required>
+            <button type="submit">登録</button>
+            <p><span id="goToLogin" class="go-to-link">ログインはこちら</span></p>
+        </form>
+    </div>
+
+    <!-- ログインフォーム -->
+    <div class="auth-form" id="loginForm" style="display: none;">
+        <h2>ログイン</h2>
+        <form id="login">
+            <input type="text" id="loginUsername" placeholder="ユーザー名" required>
+            <input type="password" id="loginPassword" placeholder="パスワード" required>
+            <button type="submit">ログイン</button>
+            <p><span id="goToRegister" class="go-to-link">新規登録はこちら</span></p>
+        </form>
+    </div>
+
+    <!-- 単語帳アプリのページ -->
+    <div class="word-app" id="wordApp" style="display: none;">
+        <h2>単語帳アプリ</h2>
+        <input type="text" id="wordInput" placeholder="単語を入力" required>
+        <input type="text" id="meaningInput" placeholder="意味を入力" required>
+        <button id="addWordBtn">単語を追加</button>
+        <ul id="wordList"></ul>
+
+        <button id="startQuizBtn" style="display: none;">クイズを開始</button>
+    </div>
+
+    <!-- クイズページ -->
+    <div class="quiz-app" id="quizApp" style="display: none;">
+        <h2>意味でクイズ</h2>
+        <div id="quizMeaning"></div>
+        <input type="text" id="quizAnswer" placeholder="意味を入力" required>
+        <button id="submitAnswerBtn">答える</button>
+        <div id="quizResult"></div>
+        <button id="nextQuestionBtn" style="display: none;">次の問題</button>
+        <button id="backToWordListBtn">単語帳に戻る</button>
+    </div>
+
+    <script src="/src/main.js"></script>
+</body>
 </html>
+
+
+
