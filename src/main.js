@@ -31,7 +31,7 @@ document.getElementById("registerForm").addEventListener("submit", function(even
   const password = document.getElementById("password").value;
 
   // すでに登録されているユーザー名が存在するか確認
-  let users = JSON.parse(localStorage.getItem("users")) || [];
+  const users = JSON.parse(localStorage.getItem("users")) || [];
   if (users.find(user => user.username === username)) {
       alert("このユーザー名は既に登録されています。");
       return;
@@ -53,7 +53,7 @@ document.getElementById("login").addEventListener("submit", function(event) {
   const loginPassword = document.getElementById("loginPassword").value;
 
   // ローカルストレージからユーザー情報を取得
-  let users = JSON.parse(localStorage.getItem("users")) || [];
+  const users = JSON.parse(localStorage.getItem("users")) || [];
 
   // ユーザー名とパスワードが一致するユーザーを探す
   const user = users.find(user => user.username === loginUsername && user.password === loginPassword);
